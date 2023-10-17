@@ -1,0 +1,22 @@
+h1 {
+    color: aqua;
+}
+
+/*  
+color: red;
+color: #ff0000;
+color: rgb(255, 0, 0);
+*/
+
+h2 {
+    color: red;
+}
+
+button {
+    color: white;
+    background-color: blue;
+}
+
+p {
+    color: green;
+}

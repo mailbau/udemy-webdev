@@ -1,0 +1,104 @@
+/* * {
+    color: pink;
+} */
+
+body {
+    background-color: #ccc;
+}
+
+button {
+    font-size: 30px;
+    background-color: aqua;
+}
+
+/*selects all h1 and h2*/
+h1,
+h2 {
+    color: red;
+}
+
+/*element selector */
+#signup {
+    background-color: blue;
+    color: white;
+}
+
+/*selects all spans */
+span {
+    color: green;
+}
+
+/*class selector; selects all with the tag class*/
+.tag {
+    background-color: greenyellow;
+    font-size: 15px;
+}
+
+/*descendant selector; selects all a's within all post classes*/
+.post a {
+    color: green;
+    text-decoration: none;
+}
+
+footer a {
+    color: red;
+    text-decoration: none;
+}
+
+/*adjacent selector; selects all buttons that come directly after an h2*/
+h2+button {
+    background-color: pink;
+    font-size: 20px;
+}
+
+/*direct descendant selector; selects all a's that are direct descendants of footer; other a's are descendants of li, ul, nav, then footer*/
+footer>a {
+    color: blue;
+}
+
+/*attribute selector; selects input with type of password*/
+input[type="password"] {
+    color: blue;
+}
+
+/*pseudo class; keyword that can be added to selectors to specify a special state of the selected element*/
+.post button:hover {
+    background-color: purple;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.post button:active {
+    background-color: skyblue;
+}
+
+.post:nth-of-type(2n) {
+    background-color: darkgray
+}
+
+/*pseudo element; keyword added to selectors to style a specific part of the selected element*/
+.post h2::first-letter {
+    font-size: 50px;
+    color: black;
+}
+
+p::first-line {
+    color: red;
+}
+
+p::selection {
+    background-color: black;
+    color: white;
+}
+
+/*this doesnt change the post buttons because the in line 65, the post class is more specific*/
+/* ID > Class > Element */
+button:hover {
+    background-color: red;
+}
