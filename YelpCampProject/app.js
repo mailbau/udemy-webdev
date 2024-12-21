@@ -19,7 +19,7 @@ const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
-const MongoDBStore = require("connect-mongo")(session);
+// const MongoDBStore = require("connect-mongo")(session);
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 
@@ -45,18 +45,18 @@ app.use(mongoSanitize({
 }));
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 
-const store = new MongoDBStore({
-    url: dbUrl,
-    secret,
-    touchAfter: 24 * 60 * 60
-});
+// const store = new MongoDBStore({
+//     url: dbUrl,
+//     secret,
+//     touchAfter: 24 * 60 * 60
+// });
 
-store.on("error", function (e) {
-    console.log("SESSION STORE ERROR", e)
-})
+// store.on("error", function (e) {
+//     console.log("SESSION STORE ERROR", e)
+// })
 
 const sessionConfig = {
-    store,
+    // store,
     name: 'session',
     secret,
     resave: false,
@@ -102,7 +102,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/ddalxeesc/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/douqbebwk/",
                 "https://images.unsplash.com/",
                 "https://api.maptiler.com/",
             ],
@@ -145,5 +145,5 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log('Serving on port ${port}')
+    console.log('Serving on port {port}')
 })
